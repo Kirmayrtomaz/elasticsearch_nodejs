@@ -1,0 +1,42 @@
+{
+  "name": "elasticsearch_nodejs",
+  "version": "1.0.0",
+  "description": "Exemplo de como se trabalha com busca textual utilizandonodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/pm2 start index.js --no-daemon --watch",
+    "test": "./node_modules/mocha/bin/_mocha --recursive **/*.spec.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha **/*.spec.js -- -u exports -R spec -b --recursive",
+    "lint": "./node_modules/.bin/eslint '**/*.js'",
+    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kirmayrtomaz/elasticsearch_nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kirmayrtomaz/elasticsearch_nodejs/issues"
+  },
+  "homepage": "https://github.com/Kirmayrtomaz/elasticsearch_nodejs#readme",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.1",
+    "should": "^13.1.2",
+    "should-sinon": "0.0.6",
+    "sinon": "^4.0.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.16.1",
+    "lodash": "^4.17.4",
+    "pm2": "^2.7.2"
+  }
+}
