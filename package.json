@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/pm2 start index.js --no-daemon --watch",
-    "test": "./node_modules/mocha/bin/_mocha --recursive **/*.spec.js",
     "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha **/*.spec.js -- -u exports -R spec -b --recursive",
     "lint": "./node_modules/.bin/eslint '**/*.js'",
-    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix"
+    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
