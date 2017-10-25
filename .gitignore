@@ -1,3 +1,4 @@
+docker_volumes/elasticsearch
 # Logs
 logs
 *.log
