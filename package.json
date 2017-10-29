@@ -8,7 +8,8 @@
     "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha **/*.spec.js -- -u exports -R spec -b --recursive",
     "lint": "./node_modules/.bin/eslint '**/*.js'",
     "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "search_bulk_loader": "docker exec -it elasticsearchnodejs_node_1 /bin/bash -c \"cd search && node search_bulk_loader_movies.js\""
   },
   "repository": {
     "type": "git",

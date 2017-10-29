@@ -2,7 +2,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const Promise = require('bluebird')
 const fs = require('fs')
-const pages = new Array(500)
+const pages = new Array(1400)
 const url = 'http://www.adorocinema.com/filmes/todos-filmes/notas-espectadores/?page='
 let $
 
@@ -24,18 +24,17 @@ function crawler (page) {
 Promise.coroutine(function * () {
   let count = 1
   for (const page of pages) {
-    console.log(count)
     yield crawler(count, page)
     count++
   }
   yield saveData()
 
-  console.log('uhuuuuuul')
+  console.log('Sucess =)')
 })()
 
 function saveData () {
   return new Promise((resolve, reject) => {
-    fs.writeFile('movies_2.json', JSON.stringify(movies), function (err) {
+    fs.writeFile('movies.json', JSON.stringify(movies), function (err) {
       if (err) {
         console.log('@_____@')
         reject(err)
@@ -44,7 +43,6 @@ function saveData () {
     })
   })
 }
-
 
 function getInfo () {
   $('#col_content .data_box').map(function (e, l) {
