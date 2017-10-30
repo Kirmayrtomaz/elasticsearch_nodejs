@@ -170,7 +170,6 @@ function loader () {
           })
 
           if (bulk.errors) {
-            logger.error('BULK ERROR', bulk)
             errors = true
           }
         }

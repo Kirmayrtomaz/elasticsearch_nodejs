@@ -1,0 +1,6 @@
+node_modules
+frontend/node_modules
+frontend/res/node_modules
+search/movies.json
+docker_volumes/*
+frontend/res/js/bundle.js

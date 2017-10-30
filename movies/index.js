@@ -5,18 +5,10 @@ const _ = require('lodash')
 
 let searchUserWrapper = require('../config').search
 
-function mergeSourceAndHighlight (item) {
-  return _.mergeWith(item._source, {
-    nameHighlight: _.get(item, 'highlight.name[0]', item._source.name)
-  })
-}
-
 function search (data) {
   return Promise.coroutine(
     function * () {
-      const {limit, page, order, query} = data
-      let {orderBy} = data
-      let sort = {}
+      const {limit, page, query} = data
       const searchMovies = yield searchUserWrapper()
       const configSearch = {
         index: 'movies',
@@ -26,7 +18,7 @@ function search (data) {
           size: limit,
           query: {},
           sort: [
-            { note: 'desc'},
+            { note: 'desc' },
             '_score'
           ],
           highlight: {
@@ -62,9 +54,9 @@ function search (data) {
 
       return {
         total,
-      movies}
+        movies}
     })()
 }
 
 module.exports = {
-search}
+  search}

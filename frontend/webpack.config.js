@@ -1,4 +1,3 @@
-const path = require('path')
 module.exports = {
   entry: './dev/js/index.js',
   output: {

@@ -1,5 +1,4 @@
 const hogan = require('hogan.js')
-const Promise = require('bluebird')
 const axios = require('axios')
 
 const template = hogan.compile(`
@@ -43,7 +42,6 @@ function search () {
       console.log(error)
     })
 }
-
 
 window.movies = {
   search
