@@ -1,0 +1,11 @@
+@import "helpers/_normalize";
+
+.image-title {
+  display: flex;
+  position: relative;
+  width: 200px;
+}
+
+.card-title {
+  text-shadow: 1px 2px 3px #666;
+}

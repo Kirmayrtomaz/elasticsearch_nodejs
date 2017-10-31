@@ -1,0 +1,39 @@
+{
+  "name": "Frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "node_modules/.bin/parallelshell 'npm run server' 'npm run watch:all'",
+    "scss": "node_modules/.bin/node-sass  dev/scss/style.scss > res/css/style.css ",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers 'last 5 versions' -r   res/css/*",
+    "css": "npm run scss && npm run autoprefixer",
+    "js_": "node_modules/.bin/browserify dev/js/index.js --s module  -o res/js/bundle.js -t [ babelify ]",
+    "js": "node_modules/.bin/webpack",
+    "server": "node_modules/.bin/browser-sync start --server --port 4000 --port-ui 8080   --files 'res/css/*.css, dev/js/*.js, *.html '",
+    "watch:css": "node_modules/.bin/onchange  'dev/scss/*' -- npm run css",
+    "watch:js": "node_modules/.bin/onchange  'dev/js/*' -- npm run js",
+    "watch:all": "node_modules/.bin/parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:js'",
+    "build:css": "npm run scss && npm run autoprefixer"
+  },
+  "author": "Kirmayr Tomaz",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.5.3",
+    "axios": "^0.17.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.2",
+    "browserify": "^13.1.1",
+    "hogan.js": "^3.0.2",
+    "jquery": "^3.1.1",
+    "node-sass": "^3.13.0",
+    "onchange": "^3.0.2",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.6.0",
+    "promise": "^8.0.1",
+    "webpack": "^1.13.3"
+  }
+}
