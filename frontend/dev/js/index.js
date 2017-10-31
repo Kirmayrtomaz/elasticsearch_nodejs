@@ -18,7 +18,7 @@ height: 210px
         <div class="col s12 m12 l12">{{#genre}}<div class="chip">{{.}}</div>{{/genre}}</div>
         <div class="col s12 m12 l12">Nota: {{note}}</div>
     </div>
-    <p style="display:none;">Don Vito Corleone (Marlon Brando) é o chefe de uma 'família' de Nova York que está feliz, pois Connie (Talia Shire), sua filha, se casou com Carlo....</p>
+    <p style="display: none;">Don Vito Corleone (Marlon Brando) é o chefe de uma 'família' de Nova York que está feliz, pois Connie (Talia Shire), sua filha, se casou com Carlo....</p>
   </div>
 </div>
 </div>
